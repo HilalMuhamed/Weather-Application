@@ -1,0 +1,77 @@
+# ------------------------
+# General
+# ------------------------
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.iml
+
+# ------------------------
+# Python (backend)
+# ------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+.venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ------------------------
+# Node.js
+# ------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------
+# Flutter (frontend)
+# ------------------------
+**/build/                 # all build outputs
+**/.dart_tool/            # dart tool cache
+**/.pub-cache/            # pub cache
+**/.packages              # pubspec lockfile
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.metadata
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Podfile.lock
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/app/build/
+
+# Web
+**/web/.dart_tool/
+
+# ------------------------
+# Docker
+# ------------------------
+docker-compose.override.yml
+
+# ------------------------
+# Misc
+# ------------------------
+*.pid
+*.seed
+*.pid.lock
