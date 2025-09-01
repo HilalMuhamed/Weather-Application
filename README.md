@@ -7,7 +7,6 @@ Bright is a cross-platform application built with **Flutter** for the frontend a
   <img src="https://img.shields.io/badge/Flutter-Frontend-blue" />
   <img src="https://img.shields.io/badge/FastAPI-Backend-green" />
   <img src="https://img.shields.io/badge/Dockerized-Yes-2496ED" />
-  <img src="https://img.shields.io/badge/Data-Mock-Faker-orange" />
 </div>
 
 ---
@@ -59,3 +58,8 @@ Bright is a cross-platform application built with **Flutter** for the frontend a
 - [Docker](https://www.docker.com/get-started)  
 - [Docker Compose](https://docs.docker.com/compose/install/)  
 
+#### Run the Application
+After cloning the repository, navigate to the project root and run:
+
+```bash
+docker-compose up --build
