@@ -37,7 +37,7 @@ class ReportTrends extends StatelessWidget {
           const Divider(
             height: 24,
             thickness: 1,
-            color: Colors.white,
+            color: Colors.white24,
           ),
 
 
@@ -90,7 +90,7 @@ class ReportTrends extends StatelessWidget {
           const Divider(
             height: 24,
             thickness: 1,
-            color: Colors.white,
+            color: Colors.white24
           ),
           const SizedBox(height: 12),
 
