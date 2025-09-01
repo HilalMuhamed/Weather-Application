@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeTrends extends StatelessWidget {
-  const HomeTrends({super.key});
+  final String apiUrl;
+  const HomeTrends({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {

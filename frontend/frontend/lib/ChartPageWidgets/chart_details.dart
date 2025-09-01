@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 
 class ChartDetails extends StatelessWidget {
-  const ChartDetails({super.key});
+  final String apiUrl;
+  const ChartDetails({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {

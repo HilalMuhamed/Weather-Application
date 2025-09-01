@@ -4,16 +4,17 @@ import 'package:frontend/ReportPageWidgets/report_navbar.dart';
 import 'package:frontend/ReportPageWidgets/report_trends.dart';
 
 class ReportPage extends StatelessWidget {
-  const ReportPage({super.key});
+  final String apiUrl;
+  const ReportPage({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          ReportDetails(),
-          ReportTrends(),
-          ReportNavBar(),
+          ReportDetails(apiUrl: apiUrl),
+          ReportTrends(apiUrl: apiUrl),
+          ReportNavBar(apiUrl: apiUrl),
         ],
       ),
     );

@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class ChartChart extends StatelessWidget {
-  const ChartChart({super.key});
+  final String apiUrl;
+  const ChartChart({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {

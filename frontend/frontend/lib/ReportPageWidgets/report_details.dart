@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class ReportDetails extends StatelessWidget {
-  const ReportDetails({super.key});
+  final String apiUrl;
+  const ReportDetails({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {

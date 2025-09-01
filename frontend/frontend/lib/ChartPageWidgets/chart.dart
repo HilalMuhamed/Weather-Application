@@ -4,16 +4,17 @@ import 'package:frontend/ChartPageWidgets/chart_chart.dart';
 import 'package:frontend/ChartPageWidgets/chart_details.dart';
 
 class ChartPage extends StatelessWidget {
-  const ChartPage({super.key});
+  final String apiUrl;
+  const ChartPage({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          ChartAppBar(),
-          ChartChart(),
-          ChartDetails(),
+          const ChartAppBar(),
+          ChartChart(apiUrl: apiUrl),
+          ChartDetails(apiUrl: apiUrl),
         ],
       ),
     );

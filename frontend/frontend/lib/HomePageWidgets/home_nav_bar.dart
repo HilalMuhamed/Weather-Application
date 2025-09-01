@@ -4,7 +4,8 @@ import 'package:frontend/HomePageWidgets/home.dart';
 import 'package:frontend/ReportPageWidgets/report.dart';
 
 class HomeNavBar extends StatelessWidget {
-  const HomeNavBar({super.key});
+  final String apiUrl;
+  const HomeNavBar({super.key, required this.apiUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class HomeNavBar extends StatelessWidget {
       ],
       onTap: (index) {
         if (index == 1) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const ReportPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ReportPage(apiUrl: apiUrl)));
         } else if (index == 2) {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const ChartPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ChartPage(apiUrl: apiUrl)));
         } else {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHome()));
         }
