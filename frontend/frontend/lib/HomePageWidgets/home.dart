@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:frontend/HomePageWidgets/home_app_bar.dart';
 import 'package:frontend/HomePageWidgets/home_nav_bar.dart';
@@ -48,25 +49,54 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     if (isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
+        backgroundColor: Colors.black, 
+        body: Center(child: CircularProgressIndicator(color: Colors.white)),
       );
     }
 
     if (weatherData == null) {
-      return const Scaffold(
-        body: Center(child: Text("Failed to load weather data")),
+      return Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(
+          child: Text(
+            "Failed to load weather data",
+            style: GoogleFonts.poppins( 
+              fontSize: 16,
+              color: Colors.white,
+            ),
+          ),
+        ),
       );
     }
 
     return Scaffold(
-      body: Column(
-        children: [
-          const HomeAppBar(),
-          HomeSummary(data: weatherData!),
-          HomeTrends(data: weatherData!),
-          HomeNavBar(data: weatherData!),
-        ],
+      backgroundColor: Colors.black, 
+      body: SafeArea(
+        child: DefaultTextStyle( 
+          style: GoogleFonts.poppins(
+            fontSize: 14,
+            color: Colors.white, 
+          ),
+          child: Column(
+            children: [
+              const HomeAppBar(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      HomeSummary(data: weatherData!),
+                      const SizedBox(height: 10),
+                      HomeTrends(data: weatherData!),
+                      const SizedBox(height: 10),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
+      bottomNavigationBar: HomeNavBar(data: weatherData!),
     );
   }
 }

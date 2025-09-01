@@ -1,3 +1,4 @@
+// ReportPage.dart
 import 'package:flutter/material.dart';
 import 'package:frontend/ReportPageWidgets/report_details.dart';
 import 'package:frontend/ReportPageWidgets/report_navbar.dart';
@@ -10,12 +11,17 @@ class ReportPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ReportDetails(data: data),
-          ReportTrends(data: data),
-          ReportNavBar(data: data),
-        ],
+      backgroundColor: Colors.black, 
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ReportDetails(data: data),
+            const SizedBox(height: 10),
+            ReportTrends(data: data),
+            const SizedBox(height: 10),
+            ReportNavBar(data: data),
+          ],
+        ),
       ),
     );
   }

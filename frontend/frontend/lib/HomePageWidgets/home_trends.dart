@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:frontend/HomePageWidgets/hourly_widget.dart';
 import 'package:frontend/HomePageWidgets/weekly_widget.dart';
 
@@ -19,8 +20,12 @@ class _HomeTrendsState extends State<HomeTrends> {
       margin: const EdgeInsets.all(16.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.green[50],
-        borderRadius: BorderRadius.circular(12),
+        gradient: const LinearGradient(
+          colors: [Color(0xFF0A0A0A), Color(0xFF201F1C)],
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,9 +33,13 @@ class _HomeTrendsState extends State<HomeTrends> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 "Trends",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               ToggleButtons(
                 isSelected: [showHourly, !showHourly],
@@ -39,28 +48,39 @@ class _HomeTrendsState extends State<HomeTrends> {
                     showHourly = index == 0;
                   });
                 },
-                children: const [
+                borderRadius: BorderRadius.circular(12),
+                fillColor: Colors.orange.shade700,
+                selectedColor: Colors.white,
+                color: Colors.orange.shade300,
+                children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
-                    child: Text("Hours"),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Text("Hours",
+                        style: GoogleFonts.poppins(fontSize: 14)),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12),
-                    child: Text("Weeks"),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Text("Weeks",
+                        style: GoogleFonts.poppins(fontSize: 14)),
                   ),
                 ],
               )
             ],
           ),
-          const Divider(height: 24, thickness: 1),
+          const Divider(height: 24, thickness: 1, color: Colors.white24),
 
           Container(
-            height: 120,
-            color: Colors.white,
-            child: Center(
-              child: showHourly ? HourlyWidget(data: widget.data) : WeeklyWidget(data: widget.data),
+            height: showHourly ? 200 : 260,
+            decoration: BoxDecoration(
+
+              borderRadius: BorderRadius.circular(16),
             ),
-          )
+            child: Center(
+              child: showHourly
+                  ? HourlyWidget(data: widget.data)
+                  : WeeklyWidget(data: widget.data),
+            ),
+          ),
         ],
       ),
     );
