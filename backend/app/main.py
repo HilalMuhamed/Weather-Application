@@ -1,11 +1,19 @@
 import random
 import datetime
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from faker import Faker
 
 app = FastAPI()
 fake = Faker()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/weather")
 def get_weather():
     today = datetime.date.today()
